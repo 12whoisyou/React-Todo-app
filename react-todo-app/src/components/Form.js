@@ -6,15 +6,18 @@ function Form({ inputText, setInputText, todos, setTodos, setStatus}) {
     setInputText(e.target.value)
   }
   const submitTodoHandler = (e) => {
-
     e.preventDefault() //This will stop making it refresh
-    
-    setTodos([
-      ...todos,
-      {text: inputText, completed: false, id: Math.random() * 1000}
-    ])
-    
-    setInputText("")
+
+    if(inputText !== ""){
+
+
+      setTodos([
+        ...todos,
+        {text: inputText, completed: false, id: Math.random() * 1000}
+      ])
+
+      setInputText("")
+    }
   }
   const statusHandler = (e) => {
     setStatus(e.target.value)
