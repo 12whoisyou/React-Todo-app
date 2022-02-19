@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/React-Todo-app/static/css/main.2408819c.css",
+    "main.js": "/React-Todo-app/static/js/main.1d98a2fd.js",
+    "static/media/Pling-sound-effect.mp3": "/React-Todo-app/static/media/Pling-sound-effect.aa874577adc972b6ecaa.mp3",
+    "index.html": "/React-Todo-app/index.html",
+    "main.2408819c.css.map": "/React-Todo-app/static/css/main.2408819c.css.map",
+    "main.1d98a2fd.js.map": "/React-Todo-app/static/js/main.1d98a2fd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2408819c.css",
+    "static/js/main.1d98a2fd.js"
+  ]
+}
