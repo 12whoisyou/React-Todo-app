@@ -59,7 +59,8 @@ form button:hover {
   opacity: 1;
   transition: all 1s ease;
 }
-.todo.hide{
+
+.todo.hide {
   opacity: 0;
   pointer-events: none;
 }
