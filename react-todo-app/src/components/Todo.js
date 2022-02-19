@@ -1,4 +1,7 @@
 import React from 'react'
+import { animated, useSpring } from 'react-spring'
+//IMport audio
+import audio from './Pling-sound-effect.mp3'
 function Todo({text, todo, todos, setTodos}) {
 
   //Events
@@ -10,9 +13,8 @@ function Todo({text, todo, todos, setTodos}) {
     //Runs through all objects and checks if they have that id of the complete one to update it
     setTodos(todos.map((item) => {
       if(item.id == todo.id){
-        console.log("Helo")
-        const audioEl = document.getElementsByClassName("audio-element")[0]
-        audioEl.play()
+        new Audio(audio).play()
+
         //Using suqgly lines so we are allowed to use ":" in complete
         return {
           ...item, completed: !item.completed
@@ -21,11 +23,12 @@ function Todo({text, todo, todos, setTodos}) {
         return(item)
     }))
   }
-  
+
+
 
   return (
     
-      <div className="todo">
+      <div className="todo" >
       {/* 
       This mess will add the class completed if completed is true
       The question mark checks if it's true and gives complete and if false gives ''
@@ -38,10 +41,6 @@ function Todo({text, todo, todos, setTodos}) {
       <button onClick={deleteHandler} className="trash-btn">
       <i className="fas fa-trash"></i>
       </button>
-      
-      <audio className="audio-element">
-          <source src="https://assets.coderrocketfuel.com/pomodoro-times-up.mp3"></source>
-        </audio>
     </div>
  
   )
