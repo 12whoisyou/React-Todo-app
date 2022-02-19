@@ -1,5 +1,4 @@
 import React from 'react'
-import { animated, useSpring } from 'react-spring'
 //IMport audio
 import audio from './Pling-sound-effect.mp3'
 function Todo({text, todo, todos, setTodos}) {
@@ -13,7 +12,9 @@ function Todo({text, todo, todos, setTodos}) {
     //Runs through all objects and checks if they have that id of the complete one to update it
     setTodos(todos.map((item) => {
       if(item.id == todo.id){
-        new Audio(audio).play()
+        if(!item.completed){
+          new Audio(audio).play()
+        }
 
         //Using suqgly lines so we are allowed to use ":" in complete
         return {
