@@ -1,27 +1,32 @@
 import React from 'react'
 
-function Form({ inputText, setInputText, todos, setTodos}) {
+function Form({ inputText, setInputText, todos, setTodos, setStatus}) {
 
   const inputTextHandler = (e) => {
-    console.log(e.target.value)
     setInputText(e.target.value)
   }
   const submitTodoHandler = (e) => {
+
     e.preventDefault() //This will stop making it refresh
-    console.log(e.target.value)
+    
     setTodos([
-      ...todos, {text: inputText, completed: false, id: Math.random() * 1000}
+      ...todos,
+      {text: inputText, completed: false, id: Math.random() * 1000}
     ])
+    
     setInputText("")
   }
-  
+  const statusHandler = (e) => {
+    setStatus(e.target.value)
+  }
+  //Make sure to set values to states to 
   return (
     <form>
-      <input onChange={inputTextHandler} type="text" className="todo-input" value={inputText} />
+      <input onChange={inputTextHandler} type="text" className="todo-input" value={inputText} /> 
       <button onClick={submitTodoHandler} className="todo-button" type="submit">
         <i className="fas fa-plus-square"></i>
       </button>
-      <div className="select">
+      <div onChange={statusHandler} className="select">
         <select name="todos" className="filter-todo">
           <option value="all">All</option>
           <option value="completed">Completed</option>
