@@ -56,7 +56,12 @@ form button:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  opacity: 1;
   transition: all 1s ease;
+}
+.todo.hide{
+  opacity: 0;
+  pointer-events: none;
 }
 .filter-todo {
   padding: 1rem;
