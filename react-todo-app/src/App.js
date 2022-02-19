@@ -17,21 +17,21 @@ function App() {
   const [status, setStatus] = useState([])
   const [filteredTodos, setFilteredTodos] = useState([])
 
-  
+
   //Functions and events
   const filterHandler = () => {
     switch(status){
       case("completed"):
-      setFilteredTodos(todos.filter(todo=> todo.completed === true))
-      break
+        setFilteredTodos(todos.filter(todo=> todo.completed === true))
+        break
 
       case("uncompleted"):
-      setFilteredTodos(todos.filter(todo=> todo.completed === false))
-      break
+        setFilteredTodos(todos.filter(todo=> todo.completed === false))
+        break
 
       default:
-      setFilteredTodos(todos)
-      break  
+        setFilteredTodos(todos)
+        break  
     }
   }
 
@@ -70,14 +70,14 @@ function App() {
   }, [todos,status])
   */
 
-//If you get an error unfefiened than you porbably past to the wrong function
+  //If you get an error unfefiened than you porbably past to the wrong function
   return (
     <div className="todo-app">
       <header>
         <h1>Todo App </h1>
       </header>
-        <Form setStatus={setStatus} inputText={inputText} todos={todos} setTodos={setTodos} setInputText={setInputText} />
-        <TodoList setTodos={setTodos} todos={todos} filteredTodos={filteredTodos}/>
+      <Form setStatus={setStatus} inputText={inputText} todos={todos} setTodos={setTodos} setInputText={setInputText} />
+      <TodoList setTodos={setTodos} todos={todos} filteredTodos={filteredTodos}/>
 
     </div>
   );
