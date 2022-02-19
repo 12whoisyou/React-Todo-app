@@ -52,7 +52,7 @@ function App() {
   //Empty brackets will only run on the start
   //First argument is function second is array of states
 
-  //Runs once when the app start, putting it first means that we load before we save
+  //Runs once when the app start, putting it first means that we load befoew everything
   useEffect(()=>{
     loadLocalTodos()
   }, [])
